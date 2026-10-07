@@ -1,0 +1,14 @@
+services:
+  backend:
+    build: ./backend
+    image: rasoi-backend:latest
+    ports:
+      - "5000:5000"
+
+  frontend:
+    build: ./frontend
+    image: rasoi-frontend:latest
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
